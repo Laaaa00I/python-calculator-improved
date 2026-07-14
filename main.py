@@ -1,6 +1,7 @@
-from config.config import *
-from config.lists import *
-from utils import *
+from Operations import TrigonometricOperations, StandardOperations
+from config.config import STANDARD_OPERATIONS, TRIGONOMETRIC_OPERATIONS, STANDARD_MODE, TRIGONOMETRIC_MODE
+from config.lists import standard_operations_list, trigonometric_operations_list
+from utils import get_float, simplify, continue_cycle
 
 
 while True:
@@ -49,9 +50,9 @@ while True:
                 res = standard_operations_list[op](obj)
             res = simplify(res)
             print("=" * 30)
-            print(res)
+            print(f"Result: {res}")
             if is_trigonometric:
-                print("Note: program used calculated radians!")
+                print("Note: trigonometric mode uses and calculates radians!")
             print("=" * 30)
             break
         except ZeroDivisionError as e: print(f"Error: {e}")
